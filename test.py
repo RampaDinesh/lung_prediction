@@ -27,7 +27,7 @@ def validate():
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(device)
     cnn = CNN().to(device)
-    cnn.load_state_dict(torch.load("modelv3.pth"))
+    cnn.load_state_dict(torch.load("modelv4.pth"))
     cnn.eval()
     model_predicts=[]
     true_predicts=[]

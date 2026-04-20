@@ -42,8 +42,9 @@ class CNN(nn.Module):
         self.fc=nn.Sequential(
             nn.Flatten(),
             nn.Linear(in_features=64*26*26,out_features=128),
-            nn.Dropout(0.5),
+            
             nn.ReLU(),
+            nn.Dropout(0.5),
             nn.Linear(in_features=128,out_features=2)
         )
     def forward(self,x):
@@ -104,7 +105,7 @@ def main():
             optimizer.zero_grad()
         print(f"Epoch [{epoch+1}/{num_epochs}], Loss: {loss.item():.4f}")
 
-    torch.save(c1.state_dict(), "modelv3.pth")
+    torch.save(c1.state_dict(), "modelv4.pth")
     
 
 if __name__ == "__main__":
